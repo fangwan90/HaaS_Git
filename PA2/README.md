@@ -1,7 +1,7 @@
 ## Resale Car Value Prediction 
 
 **Link to GitHub Repo:**
-https://github.com/fangwan90/HaaS_Git/tree/e266878da061c2f2a3f08b5a24ed34f6f54b3305/PA2 
+https://github.com/fangwan90/HaaS_Git/tree/4369ef6b0d6507a6e930cba67c47f6c8f9f5a22d/PA2
 
 ### A. Problem Statement
 
