@@ -5,7 +5,7 @@ https://github.com/fangwan90/HaaS_Git/tree/ecada722b209f97f450b866bdca7f1e1553c9
 
 ### A. Problem Statement
 
-**Background***: A Portuguese bank wants to know the key success factors for its marketing campaign i.e. what makes customers subscribe to their long-term deposit. A dataset collected from 17 campaigns, with 41K rows of data, is used for this analysis.  
+**Background**: A Portuguese bank wants to know the key success factors for its marketing campaign i.e. what makes customers subscribe to their long-term deposit. A dataset collected from 17 campaigns, with 41K rows of data, is used for this analysis.  
 
 **Problem Statement**: Create a machine learning model to predict whether an outbound call will result in a subscription (y: 1/0,), so that the bank can prioritise high-propensity customers to improve agency productivity, and reduce annoyance for those who low propensity. 
 
