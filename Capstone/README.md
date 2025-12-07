@@ -1,7 +1,8 @@
 ## Railway Reliability Prediction 
 
 **Link to GitHub Repo:** 
-https://github.com/fangwan90/HaaS_Git/tree/f1d10c7762be7e297bf477bc9ba348eee0d98391/Capstone 
+https://github.com/fangwan90/HaaS_Git/tree/main/Capstone
+
 
 ### A. Problem Statement
 
