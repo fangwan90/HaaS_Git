@@ -1,47 +1,31 @@
-## UCI Banking Campaign Success Prediction 
+## Railway Reliability Prediction 
 
-**Link to GitHub Repo:**
-https://github.com/fangwan90/HaaS_Git/tree/ecada722b209f97f450b866bdca7f1e1553c90ee/PA3 
+**Link to GitHub Repo:** 
+https://github.com/fangwan90/HaaS_Git/tree/f1d10c7762be7e297bf477bc9ba348eee0d98391/Capstone 
 
 ### A. Problem Statement
 
-**Background**: A Portuguese bank wants to know the key success factors for its marketing campaign i.e. what makes customers subscribe to their long-term deposit. A dataset collected from 17 campaigns, with 41K rows of data, is used for this analysis.  
+**Overview**: In this capstone project, the key research question to be answered is - how can a railway operator improve the reliability of its railway system? 
 
-**Problem Statement**: Create a machine learning model to predict whether an outbound call will result in a subscription (y: 1/0,), so that the bank can prioritise high-propensity customers to improve agency productivity, and reduce annoyance for those who low propensity. 
+**Data Source**: https://www.kaggle.com/datasets/gatandubuc/public-transport-traffic-data-in-france?select=Regularities_by_liaisons_Trains_France.csv
+
+This dataset contains all the point-to-point delay / on-time data for the France High Speed Rail network (TSV), accompanied by the percentage contribution by various causes of delays. The challenge is in obtaining useful insights from this set of processed data (i.e. data may not be raw enough for direct fault attribution), to be able to advise a prioritisation framework for fault prevention. 
+
+**Expected Results**: The analysis is expected to reveal a list of prioritised routes / liaisons to focus on for preventive maintenance in the future, based on past data. 
 
 **Tasks**:
 
-a. **Data understanding**: Understand the key attributes and their relation to chance of subscription. 
+a. **Data understanding**: Understand the key attributes and their relation to lateness. 
 b. **Data Preparation**: Clean, transform, and select key features to retain for modelling.  
-c. **Model Building**: Create machine learning models to predict likelihood of subscription (y). 
+c. **Model Building**: Create machine learning models to predict that a particular new route, or existing route, will be a high risk route in the future. 
 d. **Model Evaluation**: Compare against other possible models to recommend the best one.
 
 ### B. Results 
 
-A few models were created (and tuned) to try and predict high propensity customers: 
-
-a. Zero Rule Model 
-b. Logistic Regression + GridSearchCV on Logistic Regression 
-c. Decision Tree + GridSearchCV on Decision Tree 
-d. KNN + RandomizedSearchCV on KNN
-e. LinearSVM + GridSearchCV on LinearSVM
-
-Based on the outcome as shown below, putting model accuracy aside (since dataset was highly imbalanced, accuracy is likely to be high even if model is poor), the linear models (e.g. logistic regression, Linear SVM) seem to predict subscription pretty well, for relatively lower training time. This suggests that the factors compound in a linear (i.e. additive) way, to each other. 
-
-![](images/modelcompare.png)
+A simple baseline "dumb" model was created based on the mean of the test data, which favours the majority classifier (low risk). A logistic regression model based on some baseline features was then built to compare against this dataset. Based on accuracy and AOC analysis, the logistic regression model performed significantly poorer than the baseline dumb model - suggesting that the features we have selected may be insufficient. 
 
 ### C. Conclusion 
 
-![](images/features.png)
 
-This project analysed the various features that could increase chances of a customer subscribing to a bank's deposit product, as part of the bank's phone-based marketing campaign. Key insights: 
 
-a. A linear model is sufficiently predictive - suggesting that the features compound each other in affecting the decision in a relatively linear manner. 
-
-b. Wider economic factors such as employment rate, interest rate, Consumer Price Index etc, affect subscription rate more. In general, when times are good, people tend to spend, and hence subscribe (i.e. save) less. 
-
-c. The month of march sees and oddly high subscription rate, perhaps because people are rounding off the financial year and in the mood for saving. Correspondingly, similarly to (b), summer months have much poorer results, because people are in the mood for spending. 
-
-d. If the customer did not subscribe in the last campaign, chances are high he/she would not subscribe this time round either (which is counterintuitive). 
-
-e. Users tend to get fatigue if they have been called many times. This consideration would need to be balanced off with (d).  
+We may need to include more meaningful features, through feature engineering of lag features, to help improve model accuracy. 
